@@ -3,10 +3,15 @@
 
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-    http://www.springframework.org/schema/beans/spring-beans.xsd">
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="ram" class="main.java.com.stackroute.domain.Actor">
+    <context:annotation-config />
+
+    <bean id="actor" class="main.java.com.stackroute.domain.Actor">
         <constructor-arg name="name" value="Ram" index="0" type="java.lang.String"/>
         <constructor-arg name="age" value="28" index="2" type="java.lang.Integer"/>
         <constructor-arg name="gender" value="male" index="1" type="java.lang.String"/>
@@ -24,14 +29,15 @@
         <constructor-arg name="gender" value="male" index="1" type="java.lang.String"/>
     </bean>
 
-
-    <bean name="ismartShankar,ismartshankar1" class="main.java.com.stackroute.domain.Movie" scope="prototype">
-        <constructor-arg name="actor" ref="ram" />
+    <bean name="ismartShankar,ismartshankar1" class="main.java.com.stackroute.domain.Movie" scope="prototype" autowire="byName">
     </bean>
 
-
     <bean name="maharshi,maharshi1" class="main.java.com.stackroute.domain.Movie">
-        <constructor-arg name="actor" ref="mahesh" />
+        <constructor-arg name="actor" ref="mahesh"></constructor-arg>
+    </bean>
+
+    <bean name="jersey" class="main.java.com.stackroute.domain.Movie">
+        <constructor-arg name="actor" ref="nani"></constructor-arg>
     </bean>
 
 </beans>

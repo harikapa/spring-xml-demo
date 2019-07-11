@@ -1,16 +1,8 @@
 package main.java.com.stackroute;
 
 import main.java.com.stackroute.domain.Movie;
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.support.BeanDefinitionReader;
-import org.springframework.beans.factory.support.BeanDefinitionRegistry;
-import org.springframework.beans.factory.support.DefaultListableBeanFactory;
-import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
-import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.context.support.GenericApplicationContext;
-import org.springframework.core.io.ClassPathResource;
 
 public class Main {
 
@@ -33,5 +25,8 @@ public class Main {
         System.out.println(ismartShankar == ismartShankar1);
         System.out.println("using singleton scope:");
         System.out.println(maharshi == maharshi1);
+
+        Movie jersey = context.getBean("jersey",Movie.class);
+        jersey.displayActorDetails();
     }
 }
