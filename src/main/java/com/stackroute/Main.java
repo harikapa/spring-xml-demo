@@ -20,16 +20,18 @@ public class Main {
         Movie ismartShankar = context.getBean("ismartShankar",Movie.class);
         ismartShankar.displayActorDetails();
 
-        BeanFactory beanFactory = new XmlBeanFactory(new ClassPathResource("beans.xml"));
-        Movie maharshi = beanFactory.getBean("maharshi",Movie.class);
+        Movie ismartShankar1 = context.getBean("ismartshankar1",Movie.class);
+        ismartShankar1.displayActorDetails();
+
+        Movie maharshi = context.getBean("maharshi",Movie.class);
         maharshi.displayActorDetails();
 
-        DefaultListableBeanFactory factory = new DefaultListableBeanFactory();
-        BeanDefinitionRegistry beanDefinitionRegistry = new GenericApplicationContext(factory);
-        BeanDefinitionReader reader = new XmlBeanDefinitionReader(beanDefinitionRegistry);
-        reader.loadBeanDefinitions("beans.xml");
-        Movie ismartShankar2 = factory.getBean("ismartShankar",Movie.class);
-        ismartShankar2.displayActorDetails();
+        Movie maharshi1 = context.getBean("maharshi1",Movie.class);
+        maharshi1.displayActorDetails();
 
+        System.out.println("using prototype scope:");
+        System.out.println(ismartShankar == ismartShankar1);
+        System.out.println("using singleton scope:");
+        System.out.println(maharshi == maharshi1);
     }
 }

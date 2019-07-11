@@ -7,24 +7,31 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="ram" class="main.java.com.stackroute.domain.Actor">
-        <property name="name" value="Ram" />
-        <property name="age" value="28"/>
-        <property name="gender" value="male"/>
+        <constructor-arg name="name" value="Ram" index="0" type="java.lang.String"/>
+        <constructor-arg name="age" value="28" index="2" type="java.lang.Integer"/>
+        <constructor-arg name="gender" value="male" index="1" type="java.lang.String"/>
     </bean>
 
     <bean id="mahesh" class="main.java.com.stackroute.domain.Actor">
-        <property name="name" value="mahesh" />
-        <property name="age" value="40"/>
-        <property name="gender" value="male"/>
+        <constructor-arg name="name" value="mahesh" index="0" type="java.lang.String"/>
+        <constructor-arg name="age" value="40" index="2" type="java.lang.Integer"/>
+        <constructor-arg name="gender" value="male" index="1" type="java.lang.String"/>
     </bean>
 
-    <bean id="ismartShankar" class="main.java.com.stackroute.domain.Movie" >
-        <property name="actor" ref="ram" />
+    <bean id="nani" class="main.java.com.stackroute.domain.Actor">
+        <constructor-arg name="name" value="nani" index="0" type="java.lang.String"/>
+        <constructor-arg name="age" value="32" index="2" type="java.lang.Integer"/>
+        <constructor-arg name="gender" value="male" index="1" type="java.lang.String"/>
     </bean>
 
 
-    <bean id="maharshi" class="main.java.com.stackroute.domain.Movie" >
-        <property name="actor" ref="mahesh" />
+    <bean name="ismartShankar,ismartshankar1" class="main.java.com.stackroute.domain.Movie" scope="prototype">
+        <constructor-arg name="actor" ref="ram" />
+    </bean>
+
+
+    <bean name="maharshi,maharshi1" class="main.java.com.stackroute.domain.Movie">
+        <constructor-arg name="actor" ref="mahesh" />
     </bean>
 
 </beans>
