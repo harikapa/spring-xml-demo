@@ -40,4 +40,8 @@
         <constructor-arg name="actor" ref="nani"></constructor-arg>
     </bean>
 
+    <bean name="beanLifeCycle" class="main.java.com.stackroute.demo.BeanLifecycleDemoBean" init-method="customInit" destroy-method="customDestroy">
+    </bean>
+
+
 </beans>

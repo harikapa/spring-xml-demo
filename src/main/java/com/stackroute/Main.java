@@ -28,5 +28,8 @@ public class Main {
 
         Movie jersey = context.getBean("jersey",Movie.class);
         jersey.displayActorDetails();
+
+        ((ClassPathXmlApplicationContext) context).close();
+
     }
 }
