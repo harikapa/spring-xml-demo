@@ -6,18 +6,21 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+       //bean creation for actor class
     <bean id="ram" class="main.java.com.stackroute.domain.Actor">
         <property name="name" value="Ram" />
         <property name="age" value="28"/>
         <property name="gender" value="male"/>
     </bean>
 
+       //bean creation for actor class
     <bean id="mahesh" class="main.java.com.stackroute.domain.Actor">
         <property name="name" value="mahesh" />
         <property name="age" value="40"/>
         <property name="gender" value="male"/>
     </bean>
 
+       //bean creation for movie class
     <bean id="ismartShankar" class="main.java.com.stackroute.domain.Movie" >
         <property name="actor" ref="ram" />
     </bean>
