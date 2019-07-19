@@ -17,7 +17,8 @@ public class Movie implements ApplicationContextAware, BeanFactoryAware, BeanNam
     {
 
     }
-
+    
+    //constructor
     public Movie(Actor actor) {
         this.actor = actor;
     }
