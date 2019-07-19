@@ -8,6 +8,8 @@ public class Main {
 
     public static void main(String[] args)
     {
+        
+        //initializing context with beans.xml resource
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
         Movie ismartShankar = context.getBean("ismartShankar",Movie.class);
         ismartShankar.displayActorDetails();
@@ -22,13 +24,17 @@ public class Main {
         maharshi1.displayActorDetails();
 
         System.out.println("using prototype scope:");
+        //using prototype scope
         System.out.println(ismartShankar == ismartShankar1);
         System.out.println("using singleton scope:");
+        
+        //using singleton scope
         System.out.println(maharshi == maharshi1);
 
         Movie jersey = context.getBean("jersey",Movie.class);
         jersey.displayActorDetails();
 
+        //destroying context object
         ((ClassPathXmlApplicationContext) context).close();
 
     }
