@@ -16,14 +16,17 @@ public class Main {
 
     public static void main(String[] args)
     {
+        //initializing Application context with beans resource
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
         Movie ismartShankar = context.getBean("ismartShankar",Movie.class);
         ismartShankar.displayActorDetails();
 
+        //initializing BeanFactory with beans resource
         BeanFactory beanFactory = new XmlBeanFactory(new ClassPathResource("beans.xml"));
         Movie maharshi = beanFactory.getBean("maharshi",Movie.class);
         maharshi.displayActorDetails();
 
+        //initializing BeanDefinitionReader with beans resource
         DefaultListableBeanFactory factory = new DefaultListableBeanFactory();
         BeanDefinitionRegistry beanDefinitionRegistry = new GenericApplicationContext(factory);
         BeanDefinitionReader reader = new XmlBeanDefinitionReader(beanDefinitionRegistry);
