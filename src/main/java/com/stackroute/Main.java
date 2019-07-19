@@ -8,6 +8,7 @@ public class Main {
 
     public static void main(String[] args)
     {
+        //initializing context with beans.xml resource
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
         Movie ismartShankar = context.getBean("ismartShankar",Movie.class);
         ismartShankar.displayActorDetails();
