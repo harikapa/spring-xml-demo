@@ -6,6 +6,7 @@ public class Actor {
     String gender;
     Integer age;
 
+    //setter and getter injection
     public void setName(String name) {
         this.name = name;
     }
