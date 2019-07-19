@@ -7,11 +7,13 @@ public class Movie {
 
     private Actor actor;
 
+    //constructor
     public Movie()
     {
 
     }
 
+    //constructor injection
     public Movie(Actor actor) {
         this.actor = actor;
     }
