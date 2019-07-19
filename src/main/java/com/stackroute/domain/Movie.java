@@ -4,6 +4,7 @@ public class Movie {
 
     private Actor actor;
 
+    //constructor injection
     public Movie(Actor actor) {
         this.actor = actor;
     }
