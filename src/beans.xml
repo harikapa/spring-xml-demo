@@ -11,24 +11,28 @@
 
     <context:annotation-config />
 
+       //bean creation for actor class
     <bean id="actor" class="main.java.com.stackroute.domain.Actor">
         <constructor-arg name="name" value="Ram" index="0" type="java.lang.String"/>
         <constructor-arg name="age" value="28" index="2" type="java.lang.Integer"/>
         <constructor-arg name="gender" value="male" index="1" type="java.lang.String"/>
     </bean>
 
+       //bean creation for actor class
     <bean id="mahesh" class="main.java.com.stackroute.domain.Actor">
         <constructor-arg name="name" value="mahesh" index="0" type="java.lang.String"/>
         <constructor-arg name="age" value="40" index="2" type="java.lang.Integer"/>
         <constructor-arg name="gender" value="male" index="1" type="java.lang.String"/>
     </bean>
 
+       //bean creation for actor class
     <bean id="nani" class="main.java.com.stackroute.domain.Actor">
         <constructor-arg name="name" value="nani" index="0" type="java.lang.String"/>
         <constructor-arg name="age" value="32" index="2" type="java.lang.Integer"/>
         <constructor-arg name="gender" value="male" index="1" type="java.lang.String"/>
     </bean>
 
+       //bean creation for movie class
     <bean name="ismartShankar,ismartshankar1" class="main.java.com.stackroute.domain.Movie" scope="prototype" autowire="byName">
     </bean>
 
