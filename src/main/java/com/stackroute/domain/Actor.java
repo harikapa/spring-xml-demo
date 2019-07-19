@@ -6,12 +6,14 @@ public class Actor {
     String gender;
     Integer age;
 
+    //constructor injection
     public Actor(String name, String gender, Integer age) {
         this.name = name;
         this.gender = gender;
         this.age = age;
     }
-
+    
+    //setter and getter injection
     public void setName(String name) {
         this.name = name;
     }
