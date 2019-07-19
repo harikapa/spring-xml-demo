@@ -13,11 +13,13 @@ public class Movie implements ApplicationContextAware, BeanFactoryAware, BeanNam
 
     private Actor actor;
 
+    //constructor
     public Movie()
     {
 
     }
 
+    //constructor injection
     public Movie(Actor actor) {
         this.actor = actor;
     }
